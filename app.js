@@ -73,4 +73,5 @@ cardsChosen.push(cardArray[cardId].name)
 console.log('clicked', cardId)
 console.log(cardsChosen)
 }
+
 //47:20 on vid
