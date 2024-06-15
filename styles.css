@@ -1,3 +1,11 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    text-align: center;
+    background-image: url("img/crystal.jpg");
+    background-size: cover;
+ }
+
 #grid {
     width: 300px;
     height: 150px;
