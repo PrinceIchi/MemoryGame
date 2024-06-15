@@ -1,14 +1,33 @@
-html, body {
+body {
     height: 100%;
     margin: 0;
+    align-content: center;
     text-align: center;
+    justify-content: center;
     background-image: url("img/crystal.jpg");
     background-size: cover;
  }
 
-#grid {
-    width: 300px;
-    height: 150px;
-    display: flex;
+ #grid {
+    width: 100%;
+    display: grid;
     flex-wrap: wrap;
+    grid-template-columns: 80px 80px 80px 80px;
+    justify-content: center;
 }
+
+.fullHeight{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100%;
+    color:white;
+    text-shadow: -3px 3px 0 black,
+    1.5px 1.5px 0 black,
+    1.5px -1.5px 0 black,
+    -1.5px -1.5px 0 black;
+    font-size: 40px;
+    padding: 40px;
+ }
+
+ img {
+    width: 100%;
+ }

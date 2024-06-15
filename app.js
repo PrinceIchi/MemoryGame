@@ -52,10 +52,12 @@ const cardArray = [
 cardArray.sort(() => 0.5 - Math.random())
 
 const gridDisplay = document.querySelector('#grid')
+const scoreDisplay = document.querySelector('#score')
 const resultDisplay = document.querySelector('#result')
 let cardsChosen = []
 let cardsChosenIds = []
 const cardsWon = []
+let result
 
 function createBoard() {
 for (let i = 0; i < cardArray.length; i++) {
@@ -76,10 +78,10 @@ const optionOneId = cardsChosenIds[0]
 if (optionOneId == optionTwoId) {
     cards[optionOneId].setAttribute('src', 'img/DPSrole.png')
         cards[optionTwoId].setAttribute('src', 'img/DPSrole.png')
-    alert('You clicked the same image!')
+    result = 'You clicked the same image!'
 }
     if (cardsChosen[0] == cardsChosen[1]) {
-        alert('You found a match!')
+        result = 'You found a match!'
 cards[optionOneId].setAttribute('src', 'img/Fisher.png')
 cards[optionTwoId].setAttribute('src', 'img/Fisher.png')
 cards[optionOneId].removeEventListener('click', flipCard)
@@ -89,15 +91,16 @@ cardsWon.push(cardsChosen)
 else {
     cards[optionOneId].setAttribute('src', 'img/DPSrole.png')
     cards[optionTwoId].setAttribute('src', 'img/DPSrole.png')
-    alert('Try Again!')
+    result = 'Try Again!'
 }
-resultDisplay.innerHTML = cardsWon.length
+scoreDisplay.innerHTML = cardsWon.length
 cardsChosen = []
 cardsChosenIds = []
 
 if (cardsWon.length == cardArray.length/2) {
-resultDisplay.innerHTML = 'You found them all!'
+result = 'You found them all!'
 }
+resultDisplay.innerHTML = result
 }
 
 function flipCard() {  
